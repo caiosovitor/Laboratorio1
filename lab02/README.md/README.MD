@@ -1,5 +1,4 @@
-
-# Data Flow e Componentes (parte 2)
+ Data Flow e Componentes (parte 2)
 ------------------------------------
 Lab de Componentização e Reúso de Software 08/08/2020
 
@@ -16,7 +15,7 @@ No diretório s02catalog estão três notebooks:
 A entrega desse lab será formada pelo notebook components-01-catalog.ipynb com as seis tarefas resolvidas. Os notebooks multiplas-interfaces.ipynb (revisão) e components-02-whitebox.ipynb não têm tarefas associadas e o notebook components-03-statistics.ipynb tem exercícios opcionais que não precisam ser entregues.
 
 
-# Componentes e Mensagens
+Componentes e Mensagens
 ---------------------------
 
 Esse lab será voltado a componentes na Web usando a implementação do Digital Content Component (DCC).
@@ -34,7 +33,7 @@ Utilize o ambiente da seguinte maneira:
 Para esta atividade, há uma referência compacta em que são selecionados os componentes usados, bem como padrões de mensagens: Referência compacta. Para consultar a sintaxe e ver exemplos dos DCCs veja a Referência dos DCCS.
 
 
-#Tarefa Web Components 1
+Tarefa Web Components 1
 ------------------------
 
 Crie quatro botões com rótulos Mundo, Brasil P, Brasil E e Bahia que, ao serem clicados, publiquem notícias nos seguintes tópicos (conteúdo a sua escolha):
@@ -52,7 +51,52 @@ Crie três personagens (doctor, nurse e patient) usando o <dcc-lively-talk>. Cad
 * patient - mostra todas as notícias.
 
 
-#Tarefa Web Components 2
+~~~html
+<dcc-trigger label="Mundo"
+             action="noticia/mundo/politica"
+             value="O governo da Itália tem assinou o acordo entre os principais partidos do país">
+</dcc-trigger>
+<dcc-trigger label="Brasil P"
+             action="noticia/brasil/politica"
+             value="O governo do brasil liberou 2 bilhoes de reais para combate a corrupcao">
+</dcc-trigger>
+<dcc-trigger label="Brasil E"
+             action="noticia/brasil/esporte"
+             value="A selecao brasileira treina hoje para o jogo contra a Alemanha">
+</dcc-trigger>
+<dcc-trigger label="Bahia"
+             action="noticia/bahia/esporte"
+             value="Bahia perde de 3 x 0 para o Vitória e é rebaixado da serie A do brasileirao">
+</dcc-trigger>
+
+
+<dcc-lively-talk duration="0s"
+                 character="doctor"
+                 speech="">
+  <subscribe-dcc topic="noticia/mundo/politica"></subscribe-dcc>
+  <subscribe-dcc topic="noticia/brasil/politica"></subscribe-dcc>
+</dcc-lively-talk>
+
+<dcc-lively-talk duration="0s"
+                 character="nurse"
+                 speech="">
+  <subscribe-dcc topic="noticia/brasil/politica"></subscribe-dcc>
+  <subscribe-dcc topic="noticia/brasil/esporte"></subscribe-dcc>
+</dcc-lively-talk>
+
+<dcc-lively-talk duration="0s"
+                 character="patient"
+                 speech="">
+  <subscribe-dcc topic="noticia/mundo/politica"></subscribe-dcc>
+  <subscribe-dcc topic="noticia/brasil/poitica"></subscribe-dcc>
+  <subscribe-dcc topic="noticia/brasil/esporte"></subscribe-dcc>
+  <subscribe-dcc topic="noticia/bahia/esporte"></subscribe-dcc>
+</dcc-lively-talk>
+~~~
+
+
+
+Tarefa Web Components 2
 ------------------------
 
 Crie dois componentes RSS usando o <dcc-rss> que assinem os canais:
@@ -67,3 +111,42 @@ Crie três personagens (doctor, nurse e patient) usando o <dcc-lively-talk>. Cad
 * doctor - mostra notícias agregadas de ciências;
 * nurse - mostra notícias de ciências;
 * patient - mostra notícias de design.
+
+~~~html 
+<dcc-trigger label="Next Item" action="next/rss">
+</dcc-trigger>
+
+<dcc-rss publish="rss/science" source="https://www.wired.com/category/science/feed">
+  <subscribe-dcc topic="next/rss" role="step"></subscribe-dcc>
+</dcc-rss>
+
+<dcc-rss publish="rss/design" source="https://www.wired.com/category/design/feed">
+  <subscribe-dcc topic="next/rss" role="step"></subscribe-dcc>
+</dcc-rss>
+
+<dcc-aggregator publish="aggregate/science" quantity="3">
+  <subscribe-dcc topic="rss/science"></subscribe-dcc>
+</dcc-aggregator>
+
+
+<dcc-lively-talk id="nurse"
+                 duration="0s"
+                 character="doctor"
+                 speech="News ">
+  <subscribe-dcc topic="aggregate/science"></subscribe-dcc>
+</dcc-lively-talk>
+
+<dcc-lively-talk id="nurse"
+                 duration="0s"
+                 character="nurse"
+                 speech="News ">
+  <subscribe-dcc topic="rss/science"></subscribe-dcc>
+</dcc-lively-talk>
+
+<dcc-lively-talk id="patient"
+                 duration="0s"
+                 character="patient"
+                 speech="News ">
+  <subscribe-dcc topic="rss/design"></subscribe-dcc>
+</dcc-lively-talk> 
+~~~
