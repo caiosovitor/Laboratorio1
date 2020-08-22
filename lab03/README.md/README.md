@@ -44,3 +44,6 @@ Tarefa a ser feita com a equipe do trabalho: Usando o espaço que separa o MVC, 
 * considere que os diagramas que você fez fazem parte do Controller;
 * detalhe mais componentes referentes ao Model e ao View;
 * defina como será a interação entre esses componentes.
+
+
+LINK DO GITHUB DO REPOSITORIO DA TAREFA 4 FEITA EM GRUPO : https://github.com/INF331-equipe4/Labs
