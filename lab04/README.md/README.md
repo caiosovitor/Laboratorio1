@@ -9,7 +9,32 @@ Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmet
 * o cabeçalho e conteúdo JSON, XML ou outro formato da resposta
 
 
- Serviço 01: GetGames
+Serviço 01: FireBrowse Beta
+ -----------------------
+* **Titulo** : Pesquisa FireBrowse
+* **Descrição** : Busca por registros de Transposiçao Corrigida por Grandes Artérias TCGA (ligada aos estudos do cancer)
+* **URL da Requisiçao** :https://any-api.com:8443/http://firebrowse.org/api/v1/Analyses/CopyNumber/Genes/Focal?format=json&cohort=SKCM&tcga_participant_barcode=%20TCGA-GF-A4EO&sort_by=cohort
+
+* **Cabeçalho HTTP da chamada**: 
+~~~ http
+:authority: any-api.com:8443
+:method: GET
+:path: /http://firebrowse.org/api/v1/Analyses/CopyNumber/Genes/Focal?format=json&cohort=SKCM&tcga_participant_barcode=%20TCGA-GF-A4EO&sort_by=cohort
+:scheme: https
+accept: application/json
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+origin: https://any-api.com
+referer: https://any-api.com/firebrowse_org/firebrowse_org/console/Analyses/Focal
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-site
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36
+~~~
+
+
+
+ Serviço 02: GetGames
  -----------------------
 * **Titulo** : Getgames Temporada Regular 2018 Colegial
 * **Descrição** : Busca por jogadores que jogaram na temporada regular de 2018 da liga de futebol americano colegial   
