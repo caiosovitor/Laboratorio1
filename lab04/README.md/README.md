@@ -1,23 +1,4 @@
-
-Tarefa 1
-----------------------
-Componentes de Negócio
-
-Delimite partes do diagrama à esquerda que você avalia que deveriam estar dentro de um componente.
-
-Tarefa 2
----------------------
-Componentes Técnicos
-
-Separe os componentes do View daqueles definidos no Controller.
-
-Tarefa 3
----------------------
-Componentes Técnicos
-
-Separe os componentes do Model daqueles definidos no Controller.
-
-Tarefa 4
+TAREFA 04
 -----------
 Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmetros e execute pelo menos uma consulta em cada um deles. Apresente para cada serviço que você escolheu:
 
@@ -26,3 +7,7 @@ Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmet
 * uma breve descrição do mesmo
 * o cabeçalho HTTP da requisição
 * o cabeçalho e conteúdo JSON, XML ou outro formato da resposta
+
+
+ SERVIÇO 01 > GETGAMES
+ -----------------------
