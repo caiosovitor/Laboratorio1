@@ -11,9 +11,9 @@ Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmet
 
  Serviço 01: GetGames
  -----------------------
-Titulo : Pesquisa de Jogos  
-Descrição : Busca por jogos da temporada regular de 2018 da liga de futebol americano colegial   
-URL da Requisiçao : https://any-api.com:8443/https://api.collegefootballdata.com/games?year=2018&seasonType=regular
+* Titulo : Pesquisa de Jogos  
+* Descrição : Busca por jogos da temporada regular de 2018 da liga de futebol americano colegial   
+* URL da Requisiçao : https://any-api.com:8443/https://api.collegefootballdata.com/games?year=2018&seasonType=regular
 
  
 
