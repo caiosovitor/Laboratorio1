@@ -9,5 +9,9 @@ Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmet
 * o cabeçalho e conteúdo JSON, XML ou outro formato da resposta
 
 
- SERVIÇO 01 > GETGAMES
+ SERVIÇO 01 > GetGames
  -----------------------
+Titulo : Pesquisa de Jogos  
+Descrição : Busca por jogos da temporada regular de 2018 da liga de futebol americano colegial
+ 
+
