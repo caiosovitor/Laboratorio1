@@ -11,9 +11,24 @@ Encontre dois serviços REST interessantes, que recebam no mínimo dois parâmet
 
  Serviço 01: GetGames
  -----------------------
-* Titulo : Pesquisa de Jogos  
-* Descrição : Busca por jogos da temporada regular de 2018 da liga de futebol americano colegial   
-* URL da Requisiçao : https://any-api.com:8443/https://api.collegefootballdata.com/games?year=2018&seasonType=regular
-
- 
+* **Titulo** : Pesquisa de Jogos  
+* **Descrição** : Busca por jogos da temporada regular de 2018 da liga de futebol americano colegial   
+* **URL da Requisiçao** : https://any-api.com:8443/https://api.collegefootballdata.com/games?year=2018&seasonType=regular
+* **Cabeçalho HTTP da chamada**: 
+~~~ http
+:authority: any-api.com:8443
+:method: GET
+:path: /https://api.collegefootballdata.com/games?year=2018&seasonType=regular
+:scheme: https
+accept: */*
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+if-none-match: W/"78a72-LbUk5OkG/4lh00igEKZ/1BPs3h4"
+origin: https://any-api.com
+referer: https://any-api.com/collegefootballdata_com/collegefootballdata_com/console/games/getGames
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-site
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36
+~~~
 
